@@ -13,7 +13,7 @@ class Exception {
      * @param integer $status
      * @param array|null $specialItensException
      */
-    public static function thorw(string $message, int $status, array $specialItensException = null){
+    public static function throw(string $message, int $status, array $specialItensException = null){
         try{
             throw new phpException($message, $status);
         }catch(phpException $e){
