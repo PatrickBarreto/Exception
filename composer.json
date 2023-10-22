@@ -1,0 +1,20 @@
+{
+    "name": "patrick-barreto/exception",
+    "description": "This package will manage the Exception and return execeptions with more details",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "author": [
+        {
+            "name": "Patrick Barreto"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Exception\\": "src/"
+        }
+    },
+    "require": {
+        "php":">=7.0"
+    }
+}
