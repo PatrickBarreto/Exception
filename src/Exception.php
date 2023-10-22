@@ -13,12 +13,12 @@ class Exception {
      * @param integer $status
      * @param array|null $specialItensException
      */
-    public function __construct(string $message, int $status, array $specialItensException = null){
+    public static function thorw(string $message, int $status, array $specialItensException = null){
         try{
             throw new phpException($message, $status);
         }catch(phpException $e){
-            $this->setHeaders($e);
-            echo  $this->buildReturn($e, $specialItensException);
+            self::setHeaders($e);
+            echo self::buildReturn($e, $specialItensException);
             exit;
         }
     }
@@ -29,7 +29,7 @@ class Exception {
      * @param phpException $e
      * @return void
      */
-    private function setHeaders(phpException $e) {
+    private static function setHeaders(phpException $e) {
         header('Content-Type:application/json');
         http_response_code($e->getCode());
     }
@@ -41,7 +41,7 @@ class Exception {
      * @param object|null $specialItensException
      * @return string
      */
-    private function buildReturn(phpException $e, array $specialItensException = null) {
+    private static function buildReturn(phpException $e, array $specialItensException = null) {
  
         $return = [
             "erro" => $e->getMessage(),
