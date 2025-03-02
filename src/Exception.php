@@ -51,7 +51,7 @@ class Exception {
         if ($specialItensException) {
             $return['aditional_informations'] = $specialItensException;
         }
-        
+    
         return json_encode($return, JSON_PRETTY_PRINT);
     }
 }
